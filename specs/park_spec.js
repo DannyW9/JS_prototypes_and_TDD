@@ -47,11 +47,25 @@ describe('Park', function() {
     assert.strictEqual(actual, 70);
   });
 
-
   it('should be able to find all dinosaurs of a particular species', function(){
     const actual = park.findBySpecies("t-rex").length;
     assert.strictEqual(actual, 1);
   });
+
+  it('should be able to calculate the total number of visitors per day', function(){
+    const actual = park.totalDailyVisitors();
+    assert.strictEqual(actual, 120);
+  })
+
+  it('should be able to calculate the total number of visitors per year', function(){
+    const actual = park.totalYearlyVisitors();
+    assert.strictEqual(actual, 43800);
+  })
+
+  it('should be able to calculate the total yearly revenue from ticket sales', function(){
+    const actual = park.totalYearlyRevenue();
+    assert.strictEqual(actual, 525600);
+  })
 
   it('should be able to remove all dinosaurs of a particular species');
 
