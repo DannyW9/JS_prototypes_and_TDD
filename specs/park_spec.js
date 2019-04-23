@@ -11,12 +11,10 @@ describe('Park', function() {
 
   beforeEach(function() {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur2 = new Dinosaur('Velociraptor', 'carnivore', 40);
+    dinosaur2 = new Dinosaur('Velociraptor', 'carnivore', 70);
     dinosaurs = [dinosaur1, dinosaur2]
     park = new Park('Raptor Ridge', 12, dinosaurs);
   })
-
-console.log(park)
 
   it('should have a name', function(){
     const actual = park.name;
@@ -44,9 +42,16 @@ console.log(park)
     assert.strictEqual(actual, 1);
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    const actual = park.mostVisitors().guestsAttractedPerDay;
+    assert.strictEqual(actual, 70);
+  });
 
-  it('should be able to find all dinosaurs of a particular species');
+
+  it('should be able to find all dinosaurs of a particular species', function(){
+    const actual = park.findBySpecies("t-rex").length;
+    assert.strictEqual(actual, 1);
+  });
 
   it('should be able to remove all dinosaurs of a particular species');
 
