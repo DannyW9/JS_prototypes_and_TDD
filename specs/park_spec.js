@@ -72,4 +72,14 @@ describe('Park', function() {
     assert.strictEqual(actual, 1);
   });
 
+  it('should be able to group all dinosaurs by diet', function(){
+    let dinosaur4 = new Dinosaur('t-rex', 'herbivore', 50);
+    park.addDinosaur(dinosaur4);
+    let dinosaur5 = new Dinosaur('t-rex', 'omnivore', 50);
+    park.addDinosaur(dinosaur5);
+    const actual = park.numberOfDinosaursByDiet();
+    const expected = {'carnivore': 2, 'herbivore': 1, 'omnivore': 1};
+    assert.deepStrictEqual(actual, expected);
+  })
+
 });
