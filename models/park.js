@@ -10,7 +10,8 @@ Park.prototype.addDinosaur = function(dinosaur){
 }
 
 Park.prototype.removeDinosaur = function(dinosaur){
-  this.dinosaurs.pop(dinosaur);
+  const index = this.dinosaurs.indexOf(dinosaur);
+  this.dinosaurs.splice(index, 1);
   return this.dinosaurs;
 }
 
